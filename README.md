@@ -27,13 +27,16 @@ pip install -r requirements.txt
 ```
 
 ### Setup
-Create a `.env` file:
+Create a `keys.env` file in the project root with your Google Gemini API keys (multiple keys for rotation):
 ```
-GEMINI_API_KEY=your_key_here
+GEMINI_API_KEYS=[
+    "your_first_api_key_here",
+    "your_second_api_key_here",
+    "your_third_api_key_here"
+]
 ```
 
 ### Run
 ```bash
 streamlit run app.py
 ```
-
