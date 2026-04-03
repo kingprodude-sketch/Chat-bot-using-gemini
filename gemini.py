@@ -11,7 +11,6 @@ from trulens.providers.litellm import LiteLLM
 from trulens.core import Feedback
 import numpy as np
 from dotenv import load_dotenv
-import os
 
 load_dotenv()
 os.environ["TRULENS_OTEL_TRACING"] = "0"  # disable OTEL mode so old selectors work
