@@ -10,15 +10,14 @@ from trulens.apps.llamaindex import TruLlama
 from trulens.providers.litellm import LiteLLM
 from trulens.core import Feedback
 import numpy as np
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 os.environ["TRULENS_OTEL_TRACING"] = "0"  # disable OTEL mode so old selectors work
 
 # FOR DIFFERENT API keys
-GEMINI_API_KEYS = [
-    "AIzaSyDeyu7vJ4bzlhfqcOvOF-6EHhhRZzUyIdA",
-    "AIzaSyAi5k6l25tR0y5sgz5keFcsAelT6iCJeJc",
-    "AIzaSyA6fk2H19reCPRsGZV9draZ91EhRmUVyhc",
-]
+api_key = os.getenv("GEMINI_API_KEY")
 
 class APIKeyManager: # Manages a pool of API keys with randomization and fallback.
     def __init__(self, keys):
